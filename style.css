@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Corpo e fundo da página */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+ 
+/* App centralizado com largura de iPhone 14 Pro Max */
+.app-container {
+  max-width: 430px;              /* iPhone 14 Pro Max largura CSS */
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 25px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  border-radius: 12px;
+}
+.barra{
+    position: absolute;
+    bottom: 0;    
+    width: 100%;
+}
+.shape{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #004C94;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 40vh;
+}
+.logo-formatada{
+    display: flex;
+    padding-top: 120px;
+    margin: 0 auto;
+}
+.radar-texto{
+    text-align: center;
+    margin: 50px auto 0 auto;
+    max-width: 330px;
+    color: #F7941D;
+    font-family: Roboto;
+    font-weight: 800;
+    font-size: 35px;
+}
+.texto-shape{
+    color: #fff;
+    font-family: Roboto;
+    font-weight: 800;
+    margin-top: 40px;
+}
+.input-shape{
+    width: 250px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 35px;
+    font-weight: bold;
+}
+.btn-shape{
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #F7941D;
+    padding: 15px 50px;
+}
+
+
+.formatacao{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 240px;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 800;
+}
+h2 span{
+    color:#004C94 
+}
+h2 strong {
+  color:#F7941D
+}
+.letras-pequenas{
+    font-size: 20px;
+    font-weight: bold;
+}
+.canto-amarelo{
+    width: 80px;
+}
+.logo-senac{
+    width: 200px;
+    margin-top: 30px;
+}
+.canto-azul{
+    width: 90px;
+
+}
+.btn-ok{
+    font-family: Roboto;
+    font-weight: bold;
+    color: #fff;
+    background-color: #F7941D;
+    padding: 10px 20px;
+}
