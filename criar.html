@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WebApp Senac</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="d-flex justify-content-center align-items-center">
+
+  <div class="app-container d-flex flex-column p-3">
+    <div class="d-flex">
+      <img src="img/retangulo.png" class="img-fluid mb-5 retangulo-inicio" alt="Retângulo decorativo">
+      <div class="logo-senac">
+        <a href="listar.html"><img src="img/logosenac.png" class="img-fluid mb-3 logo-senac-img" alt="Logo Senac"></a>
+      </div>
+    </div>
+
+    <p><strong>NOME</strong>, se liga nas oportunidades da semana!</p>
+    <h1 class="h5">OFERTA</h1>
+
+    <div class="box-teste bg-light p-3 rounded shadow-sm mb-3">
+
+      <div class="mb-2">
+        <label for="tipo" class="form-label small">Tipo</label>
+        <select id="tipo" class="form-select form-select-sm">
+          <option value="oferta">OFERTA</option>
+          <option value="solicitacao">SOLICITAÇÃO</option>
+        </select>
+      </div>
+
+      <div class="mb-2">
+        <label for="titulo" class="form-label small">Título</label>
+        <input type="text" class="form-control form-control-sm" id="titulo" placeholder="Digite o título">
+      </div>
+
+      <div class="mb-2">
+        <label for="nome" class="form-label small">Nome</label>
+        <input type="text" class="form-control form-control-sm" id="nome" placeholder="Digite o nome">
+      </div>
+
+      <div class="mb-2">
+        <label for="descricao" class="form-label small">Descrição</label>
+        <textarea class="form-control form-control-sm" id="descricao" rows="3" placeholder="Escreva a descrição..."></textarea>
+      </div>
+
+      <div class="mb-2">
+        <label for="instagram" class="form-label small">Instagram</label>
+        <input type="text" class="form-control form-control-sm" id="instagram" placeholder="@seuUser (Opcional)">
+      </div>
+
+      <div>
+        <label for="telefone" class="form-label small">Telefone</label>
+        <input type="tel" class="form-control form-control-sm" id="telefone" placeholder="(xx) xxxxx-xxxx">
+      </div>
+
+      <div class="d-grid mt-4">
+        <button id="btnPostar" class="btn btn-primary btn-sm">Postar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/criar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* Corpo e fundo da página */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* App centralizado com largura de iPhone 14 Pro Max */
+.app-container {
+  width: 430px;              /* iPhone 14 Pro Max largura CSS */
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 25px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  border-radius: 12px;
+}
+
+/* Estilo do box da oferta */
+.box-teste {
+  border: 1px solid #dee2e6;
+}
+
+.logo-senac{
+  padding-top:15px;
+}
+.logo-senac-img{
+  width: 200px;
+}
+.retangulo-inicio{
+  width: 100px;
+}
+
+.imagens{
+  display: flex;
+}
