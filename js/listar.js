@@ -1,9 +1,10 @@
 const container = document.querySelector('.app-container');
 const ofertas = JSON.parse(localStorage.getItem('ofertas') || '[]');
 
+// Função para criar cada card
 const renderCard = (oferta) => {
   const card = document.createElement('div');
-  card.className = 'box-teste bg-light p-3 rounded shadow-sm mb-3';
+  card.className = 'corpo-anuncio bg-light p-3 rounded shadow-sm mb-3'; 
 
   card.innerHTML = `
     <h2 class="h6">${oferta.titulo}</h2>
@@ -11,50 +12,35 @@ const renderCard = (oferta) => {
     <p class="small">${oferta.descricao}</p>
     <h3 class="h6">Contatos</h3>
     <p class="small">${oferta.instagram}<br>${oferta.telefone}</p>
-    <div class="d-flex gap-2 mt-2">
-      <button class="btn btn-sm btn-outline-primary editar">Editar</button>
-      <button class="btn btn-sm btn-outline-danger deletar">Deletar</button>
-    </div>
   `;
-
-  // Editar
-  card.querySelector('.editar').addEventListener('click', () => {
-    localStorage.setItem('editarOferta', JSON.stringify(oferta));
-    window.location.href = 'criar.html';
-  });
-
-  // Deletar
-  card.querySelector('.deletar').addEventListener('click', () => {
-    if (confirm('Deseja deletar esta oferta?')) {
-      const novas = ofertas.filter(o => o.id !== oferta.id);
-      localStorage.setItem('ofertas', JSON.stringify(novas));
-      location.reload();
-    }
-  });
 
   return card;
 };
 
-// Renderizar se houver ofertas
+// Função para renderizar um grupo de cards
 const renderGrupo = (titulo, lista) => {
   const h = document.createElement('h1');
-  h.className = 'h5 mt-4';
+  h.className = 'tipo-card h5 mt-4';
   h.textContent = titulo;
   container.appendChild(h);
 
   lista.forEach(o => container.appendChild(renderCard(o)));
 };
 
+// Filtrar por tipo
 const ofertasFiltradas = ofertas.filter(o => o.tipo === 'oferta');
 const solicitacoesFiltradas = ofertas.filter(o => o.tipo === 'solicitacao');
 
+// Renderizar os grupos se houver dados
 if (ofertasFiltradas.length > 0) renderGrupo('OFERTAS', ofertasFiltradas);
 if (solicitacoesFiltradas.length > 0) renderGrupo('SOLICITAÇÕES', solicitacoesFiltradas);
 
+// Verificar se estamos editando alguma oferta
 const ofertaEditando = JSON.parse(localStorage.getItem('editarOferta'));
 const btnPostar = document.getElementById('btnPostar');
 const telefoneInput = document.getElementById('telefone');
 
+// Preencher formulário se estiver editando
 if (ofertaEditando) {
   document.getElementById('tipo').value = ofertaEditando.tipo;
   document.getElementById('titulo').value = ofertaEditando.titulo;
@@ -64,11 +50,12 @@ if (ofertaEditando) {
   document.getElementById('telefone').value = ofertaEditando.telefone;
 }
 
-// Filtro para aceitar só números no telefone
+// Filtro: apenas números no telefone
 telefoneInput.addEventListener('input', () => {
   telefoneInput.value = telefoneInput.value.replace(/\D/g, '');
 });
 
+// Botão para criar ou atualizar oferta
 btnPostar.addEventListener('click', () => {
   const tipo = document.getElementById('tipo').value;
   const titulo = document.getElementById('titulo').value.trim();

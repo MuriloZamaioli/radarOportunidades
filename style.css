@@ -111,24 +111,25 @@ h2 strong {
     font-family: Roboto;
     font-weight: 800;
 }
-.corpo-anuncio{
-    display: flex;
-    margin: 0 auto;
-    width: 350px;
-    height: 500px;
-    background-color: #eeeeee;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    z-index: 1;
-    position: relative;
-}
-.titulo-card{
-    position: absolute;
-    top: -23px;
-    left: 120px;
-    z-index: 2;
-    height: 30px;
+.tipo-card{
     color: #F7941D;
     font-weight: bold;
     font-size: 32px;
+    text-align: center;
+}
+.corpo-anuncio {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.corpo-anuncio p,
+.corpo-anuncio h2,
+.corpo-anuncio h3 {
+  max-width: 100%;
+}
+.form-inicial{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
