@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WebApp Senac</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="d-flex justify-content-center align-items-center">
 
   <div class="app-container d-flex flex-column p-3">
     <div class="d-flex">
-      <img src="img/canto_laranja.png" class="img-fluid mb-5 retangulo-inicio" alt="Retângulo decorativo">
+
+      <div class="menu-toggle" onclick="toggleMenu()" id="menuBtn">
+        <img src="img/canto-menu.png" alt="Menu" />
+      </div>
+      <div id="overlay"></div>
+      <!-- Menu lateral -->
+      <div class="menu-box" id="sideMenu">
+        <a href="mural.html" class="menu-item">Mural</a>
+        <a href="ofertas.html" class="menu-item">Ofertas</a>
+        <a href="solicitacoes.html" class="menu-item">Solicitações</a>
+        <a href="criar.html" class="menu-item">Criar Postagem</a>
+        <a href="index.html" class="logout-icon">
+          <img src="img/sair.png" alt="Logout" />
+        </a>
+      </div>
+
       <div class="logo-senac">
-        <img src="img/logo.png class="img-fluid mb-3 logo-senac-img" alt="Logo Senac">
+        <img src="img/logo.png" class=" img-fluid mb-3 logo-senac-img" alt="Logo Senac">
       </div>
     </div>
 
@@ -23,9 +40,10 @@
 
     <a href="criar.html" class="btn btn-outline-primary mt-3">+ Criar Nova Oferta</a>
   </div>
-  
+
 
   <script src="js/listar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

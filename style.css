@@ -133,3 +133,67 @@ h2 strong {
     align-items: center;
     flex-direction: column;
 }
+
+.menu-box {
+  background-color: #ff9500;
+  width: 200px;
+  height: 270px;
+  position: fixed;
+  top: 0;
+  left: -200px;
+  padding: 1.5rem 1rem;
+  border-radius: 0 0 40px 0;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.menu-box.active {
+  left: 0;
+}
+ 
+.menu-item {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+ 
+.menu-item.active {
+  background-color: #004f9f;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  display: inline-block;
+  color: white;
+}
+ 
+.logout-icon {
+  margin-top: auto;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.menu-toggle {
+  cursor: pointer;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* preto semi-transparente */
+  opacity: 0;
+  pointer-events: none; /* permite clicar só no que estiver em cima */
+  transition: opacity 0.3s ease;
+  z-index: 999; /* atrás do menu (1000) e do botão (1001) */
+}
+ 
+#overlay.active {
+  opacity: 1;
+  pointer-events: auto; /* bloqueia clique no conteúdo atrás */
+}
