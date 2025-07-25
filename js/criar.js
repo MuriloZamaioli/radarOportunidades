@@ -101,7 +101,7 @@ btnPostar.addEventListener('click', () => {
   }
 
   // Redireciona para a lista
-  window.location.href = 'listar.html';
+  window.location.href = 'mural.html';
 });
 
 const descricaoInput = document.getElementById('descricao');
