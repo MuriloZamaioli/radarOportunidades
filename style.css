@@ -32,7 +32,7 @@ html, body {
 }
 .logo-formatada{
     display: flex;
-    padding-top: 120px;
+    padding-top: 80px;
     margin: 0 auto;
 }
 .radar-texto{
@@ -240,3 +240,4 @@ input::placeholder {
   color: #fff;
   font-weight: bold;
 }
+

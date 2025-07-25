@@ -1,8 +1,8 @@
 // Pega elementos
-const btnPostar = document.querySelector('button.btn-primary');
+const btnPostar = document.getElementById('btnPostar');
 const telefoneInput = document.getElementById('telefone');
 
-// Se estiver editando oferta, carrega dados
+// Se estiver editando oferta, carrega dadosL
 const ofertaEditando = JSON.parse(localStorage.getItem('editarOferta'));
 if (ofertaEditando) {
   document.getElementById('tipo').value = ofertaEditando.tipo || 'OFERTA';
@@ -116,36 +116,29 @@ descricaoInput.addEventListener('input', () => {
 
 const menu = document.getElementById("sideMenu");
 const menuBtn = document.getElementById("menuBtn");
-const overlay = document.getElementById("overlay"); // pegando o overlay
- 
+const overlay = document.getElementById("overlay");
+
 function toggleMenu() {
   const isOpen = menu.classList.toggle("active");
-  overlay.classList.toggle("active", isOpen); // adiciona/remove classe active do overlay
-  if (isOpen) {
-    menuBtn.classList.add("hidden");
-  } else {
-    menuBtn.classList.remove("hidden");
-  }
+  overlay.classList.toggle("active", isOpen);
+  menuBtn.classList.toggle("hidden", isOpen);
 }
- 
-// Fecha o menu ao clicar fora do menu ou no overlay
+
 document.addEventListener("click", function(event) {
   const isClickInsideMenu = menu.contains(event.target);
   const isClickOnButton = menuBtn.contains(event.target);
-  const isClickOnOverlay = overlay.contains(event.target);
- 
+
   if (!isClickInsideMenu && !isClickOnButton && menu.classList.contains("active")) {
     menu.classList.remove("active");
     overlay.classList.remove("active");
     menuBtn.classList.remove("hidden");
   }
 });
- 
-// Marca automaticamente o item ativo com base na URL
+
 window.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname.split("/").pop();
   const menuItems = document.querySelectorAll(".menu-item");
- 
+
   menuItems.forEach(item => {
     const itemPage = item.getAttribute("href");
     if (itemPage === currentPage) {
